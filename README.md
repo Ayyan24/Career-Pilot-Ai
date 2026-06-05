@@ -32,6 +32,13 @@ Career Pilot AI is a static website for a career guidance service. It includes p
 3. Customize the theme and layout by updating `style.css` and page-specific CSS files.
 4. For chatbot styling, update `chatbot.css`.
 
+## Chatbot
+
+- `chatbot.html` provides an interactive chatbot interface for users.
+- `chatbot (1).js` contains the chatbot logic and message handling.
+- `chatbot.css` styles the chat window, bubbles, and input area.
+- You can enhance the chatbot by connecting `chatbot (1).js` to an AI service or backend endpoint for dynamic responses.
+
 ## Notes
 
 - The project is built with plain HTML and CSS.
