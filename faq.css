@@ -1,0 +1,81 @@
+/* =========================
+   FAQ SECTION 
+========================= */
+
+.faq-section {
+  background: transparent;
+}
+
+.faq-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  text-align: left;
+}
+
+/* FAQ ITEM CARD */
+.faq-item {
+  background: var(--surface);
+  border: 0.1rem solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+/* HOVER EFFECT */
+.faq-item:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: var(--shadow-md);
+}
+
+/* HIDE CHECKBOX */
+.faq-item input {
+  display: none;
+}
+
+/* QUESTION */
+.faq-item label {
+  display: block;
+  padding: var(--s4);
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+/* ICON (+ / -) */
+.faq-item label::after {
+  content: "+";
+  position: absolute;
+  right: var(--s4);
+  font-size: 2rem;
+  color: var(--accent);
+  transition: var(--transition);
+}
+
+/* ANSWER */
+.faq-item p {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 var(--s4);
+  color: var(--text-secondary);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+/* OPEN STATE */
+.faq-item input:checked ~ p {
+  max-height: 20rem;
+  padding-bottom: var(--s4);
+}
+
+.faq-item input:checked + label::after {
+  content: "−";
+  color: var(--secondary);
+  text-shadow: none;
+}
