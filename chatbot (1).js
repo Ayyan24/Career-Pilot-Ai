@@ -263,3 +263,5 @@ window.ChatbotAPI = {
 };
 
 console.log("🚀 Chatbot Ready (Responsive Version)");
+
+System.Collections.Hashtable.text
