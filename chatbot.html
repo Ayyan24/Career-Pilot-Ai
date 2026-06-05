@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Assistant - Career Pilot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./chatbot.css">
+    <style>
+        .chatbot-page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+            background-attachment: fixed;
+        }
+
+        .chatbot-page-content {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .chatbot-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .chatbot-info h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #F8FAFC 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .chatbot-info p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .chatbot-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-item {
+            padding: 1rem;
+            background: rgba(79, 70, 229, 0.1);
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            border-radius: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .chatbot-container-page {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 600px;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 16px 48px rgba(79, 70, 229, 0.25);
+        }
+
+        .chatbot-page .chatbot-header {
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        @media (max-width: 1024px) {
+            .chatbot-page-content {
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .chatbot-info {
+                order: 2;
+            }
+
+            .chatbot-container-page {
+                max-width: 100%;
+                height: 500px;
+                order: 1;
+            }
+
+            .chatbot-info h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .chatbot-page-content {
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+
+            .chatbot-container-page {
+                height: 400px;
+            }
+
+            .chatbot-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="chatbot-page">
+    <!-- Floating Background Shapes -->
+    <div class="background-shape-1"></div>
+    <div class="background-shape-2"></div>
+
+    <!-- NAVBAR -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Career Pilot</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./faq.html">FAQs</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <a href="./chatbot.html" class="chat-btn btn-primary">Chatbot</a>
+        </nav>
+    </header>
+
+    <!-- CHATBOT PAGE CONTENT -->
+    <div class="chatbot-page-content">
+        <!-- CHATBOT INFO SECTION -->
+        <div class="chatbot-info">
+            <h1>AI Career Guidance Assistant</h1>
+            <p>Get personalized career recommendations, skill assessments, and learning paths powered by artificial intelligence. Ask me anything about your career journey!</p>
+            <div class="chatbot-features">
+                <div class="feature-item">📚 Learning Paths</div>
+                <div class="feature-item">🎯 Career Guidance</div>
+                <div class="feature-item">💼 Job Matching</div>
+                <div class="feature-item">🏆 Skill Assessment</div>
+                <div class="feature-item">📈 Career Growth</div>
+                <div class="feature-item">🚀 Opportunities</div>
+            </div>
+        </div>
+
+        <!-- CHATBOT CONTAINER -->
+        <div class="chatbot-container-page" id="chatbot">
+            <!-- HEADER -->
+            <div class="chatbot-header">
+                <div class="chatbot-header-content">
+                    <h3 class="chatbot-title">Career Guidance Assistant</h3>
+                    <p class="chatbot-subtitle">Web Dev • AI • Cybersecurity • Design</p>
+                </div>
+                <button class="chatbot-minimize-btn" onclick="toggleChatbot()" aria-label="Minimize chatbot">−</button>
+            </div>
+
+            <!-- MESSAGES AREA -->
+            <div class="chatbot-messages" id="chatMessages">
+                <!-- WELCOME MESSAGE -->
+                <div class="message ai-message">
+                    <div class="message-content">
+                        👋 Hello! I'm your Career Guidance Assistant.<br><br>
+                        I can help you with:<br>
+                        • Web Development<br>
+                        • AI & Machine Learning<br>
+                        • Cybersecurity<br>
+                        • Graphic Design<br>
+                        • Digital Marketing<br><br>
+                        Ask me anything to get started 🚀
+                    </div>
+                </div>
+            </div>
+
+            <!-- TYPING INDICATOR -->
+            <div class="typing-indicator" id="typingIndicator" style="display:none;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- INPUT AREA -->
+            <div class="chatbot-input-area">
+                <input type="text" id="chatInput" class="chatbot-input" placeholder="Ask about your career..." autocomplete="off" aria-label="Chat input">
+                <button class="chatbot-send-btn" onclick="sendMessage()" aria-label="Send message">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h3>Career Pilot AI</h3>
+        <p>Your AI-powered career assistant for future success.</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h3>Our Services</h3>
+                <ul class="footer-list">
+                    <li><a href="./services.html">Career Guidance</a></li>
+                    <li><a href="./services.html">Skill Assessment</a></li>
+                    <li><a href="./services.html">Career Alerts</a></li>
+                    <li><a href="./services.html">Learning Roadmaps</a></li>
+                    <li><a href="./services.html">Job Recommendations</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <div class="social-links">
+                    <a href="mailto:contact@careerpilot.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="#" title="Phone"><i class="fas fa-phone"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2026 Career Pilot AI. All Rights Reserved.</p>
+    </footer>
+
+    <script src="./chatbot.js"></script>
+</body>
+</html>
