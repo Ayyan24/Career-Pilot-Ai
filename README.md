@@ -4,6 +4,12 @@
 
 Career Pilot AI is a static website for a career guidance service. It includes pages for home, about, services, FAQ, contact, login, signup, and a chatbot demo.
 
+## Team
+
+- Ayyan
+- Owais
+- Abdullah
+
 ## Project Structure
 
 - `index.html` - Homepage
