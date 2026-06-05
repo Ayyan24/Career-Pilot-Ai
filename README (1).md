@@ -37,3 +37,5 @@ Career Pilot AI is a static website for a career guidance service. It includes p
 - Add real backend support for login/signup and contact form handling.
 - Make the chatbot interactive by connecting `chatbot.js` to an AI service.
 - Improve accessibility, responsiveness, and mobile layout.
+
+System.Collections.Hashtable.text
