@@ -932,32 +932,6 @@ label {
     flex-direction: column;
     gap: var(--spacing-sm);
   }
-
-  /* Make navbar compact and use toggle */
-  .nav-toggle {
-    display: block;
-    background: transparent;
-    border: 1px solid rgba(148,163,184,0.12);
-    color: var(--text-secondary);
-    padding: 6px 8px;
-    border-radius: 8px;
-    font-size: 18px;
-    margin-left: auto;
-    cursor: pointer;
-  }
-
-  .nav-links {
-    display: none;
-    width: 100%;
-    padding: 8px 0;
-  }
-
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
   header {
     padding: 8px 0;
   }
