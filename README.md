@@ -6,8 +6,8 @@ Career Pilot AI is a static website for a career guidance service. It includes p
 
 ## Team
 
-- Ayyan
-- Owais
+- Ayyan Raghib
+- Owais Raza
 - Abdullah
 
 ## Project Structure
