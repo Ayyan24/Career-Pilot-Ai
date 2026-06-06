@@ -22,6 +22,7 @@
     <header class="header">
         <nav class="navbar">
             <div class="logo">Career Pilot</div>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./about.html">About</a></li>
@@ -124,5 +125,17 @@
 
 </body>
 </html>
+
+    <script>
+    // Simple nav toggle for mobile
+    document.addEventListener('DOMContentLoaded', function(){
+        var btn = document.querySelector('.nav-toggle');
+        var links = document.querySelector('.nav-links');
+        if (!btn || !links) return;
+        btn.addEventListener('click', function(){
+            links.classList.toggle('open');
+        });
+    });
+    </script>
 
 System.Collections.Hashtable.text
